@@ -20,11 +20,22 @@
     <section id="contact">
         <h2>Contact Us</h2>
         <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <label>Your Name: <input type="text" name="name" required></label>
             <label>Your Email: <input type="email" name="email" required></label>
             <label>Message: <textarea name="message" required></textarea></label>
             <button type="submit">Send</button>
         </form>
     </section>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+            // Here, you can implement custom form submission logic if needed.
+            // For example, sending form data using Fetch API or another method.
+            // Since Netlify is handling the form, you might not need to add anything here.
+        });
+    </script>
 </body>
 </html>
